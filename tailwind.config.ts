@@ -6,10 +6,31 @@ function toSrcset(svgString: string): string {
   const dataUri = "data:image/svg+xml," + encodeURIComponent(body);
   return dataUri.replace(/ /g, "%20");
 }
-import { default as flattenColorPalette } from "tailwindcss/lib/util/flattenColorPalette.js";
 import tailwindcssAnimate from "tailwindcss-animate";
 
 import "tailwindcss/colors";
+
+function flattenColorPalette(
+  colors: Record<string, unknown>,
+  prefix = ""
+): Record<string, string> {
+  const flat: Record<string, string> = {};
+
+  for (const [key, value] of Object.entries(colors)) {
+    const nextKey = key === "DEFAULT" ? prefix : prefix ? `${prefix}-${key}` : key;
+
+    if (typeof value === "string") {
+      flat[nextKey] = value;
+      continue;
+    }
+
+    if (value && typeof value === "object") {
+      Object.assign(flat, flattenColorPalette(value as Record<string, unknown>, nextKey));
+    }
+  }
+
+  return flat;
+}
 
 const config = {
   darkMode: ["class"],

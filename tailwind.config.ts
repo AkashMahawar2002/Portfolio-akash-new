@@ -7,6 +7,7 @@ function toSrcset(svgString: string): string {
   return dataUri.replace(/ /g, "%20");
 }
 import { default as flattenColorPalette } from "tailwindcss/lib/util/flattenColorPalette";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 import "tailwindcss/colors";
 
@@ -166,7 +167,7 @@ const config = {
     },
   },
   plugins: [
-    require("tailwindcss-animate"),
+    tailwindcssAnimate,
     addVariablesForColors,
     function ({ matchUtilities, theme }: any) {
       matchUtilities(

@@ -29,6 +29,14 @@ type Position = {
   color: string;
 };
 
+type GlobePoint = {
+  size: number;
+  order: number;
+  color: (t: number) => string;
+  lat: number;
+  lng: number;
+};
+
 export type GlobeConfig = {
   pointSize?: number;
   globeColor?: string;
@@ -63,16 +71,7 @@ interface WorldProps {
 let numbersOfRings = [0];
 
 export const Globe = ({ globeConfig, data }: WorldProps) => {
-  const [globeData, setGlobeData] = useState<
-    | {
-        size: number;
-        order: number;
-        color: (t: number) => string;
-        lat: number;
-        lng: number;
-      }[]
-    | null
-  >(null);
+  const [globeData, setGlobeData] = useState<GlobePoint[] | null>(null);
 
   const globeRef = useRef<ThreeGlobe | null>(null);
 
@@ -118,7 +117,7 @@ export const Globe = ({ globeConfig, data }: WorldProps) => {
 
   const _buildData = () => {
     const arcs = data;
-    let points = [];
+    const points: GlobePoint[] = [];
     for (let i = 0; i < arcs.length; i++) {
       const arc = arcs[i];
       const rgb = hexToRgb(arc.color) as { r: number; g: number; b: number };
@@ -189,8 +188,22 @@ export const Globe = ({ globeConfig, data }: WorldProps) => {
       .arcDashGap(15)
       .arcDashAnimateTime((e) => defaultProps.arcTime);
 
+    const points: Array<{ lat: number; lng: number; color: string }> = [];
+    data.forEach((arc: Position) => {
+      points.push({
+        lat: arc.startLat,
+        lng: arc.startLng,
+        color: arc.color,
+      });
+      points.push({
+        lat: arc.endLat,
+        lng: arc.endLng,
+        color: arc.color,
+      });
+    });
+
     globeRef.current
-      .pointsData(data)
+      .pointsData(points)
       .pointColor((e) => (e as { color: string }).color)
       .pointsMerge(true)
       .pointAltitude(0.0)

@@ -4,7 +4,7 @@ export const navItems = [
   { name: "About", link: "#about" },
   { name: "Projects", link: "#projects" },
   { name: "Testimonials", link: "#testimonials" },
-  { name: "Contact", link: "#contact" },
+  { name: "Contact", link: "#get-in-touch" },
 ] as const;
 
 export const gridItems = [
@@ -15,7 +15,7 @@ export const gridItems = [
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
     imgClassName: "w-full h-full",
     titleClassName: "justify-end",
-    img: "/b1.svg",
+    img: "/b1.jpg",
     spareImg: "",
   },
   {
@@ -74,39 +74,63 @@ export const gridItems = [
 export const projects = [
   {
     id: 1,
-    title: "FigPro - Collaborative Design Tool",
-    des: "A collaborative design tool with real-time collaboration, vector editing, and a responsive UI.",
-    img: "/p1.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-    link: "https://clone-figmaa.netlify.app",
-    sourceCode: "https://github.com/sanidhyy/figma-clone",
+    title: "Ziostech Solutions Portfolio",
+    des: "Built the official portfolio using Next.js and Tailwind CSS with reusable components across 15+ pages.",
+    img: "/project1.png",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
+    link: "https://www.ziostechsolutions.com/",
+    sourceCode: "https://github.com/SinghAdii/Z.S.M",
+    caseStudy: {
+      problem: "Marketing pages were inconsistent and difficult to scale across service verticals.",
+      role: "Owned frontend architecture and reusable component system.",
+      stack: ["Next.js", "TypeScript", "Tailwind CSS"],
+      result: "Delivered 15+ reusable pages with faster shipping cadence for business updates.",
+    },
   },
   {
     id: 2,
-    title: "Yoom - Video Conferencing App",
-    des: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
-    img: "/p2.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-    link: "https://clone-yoom.netlify.app",
-    sourceCode: "https://github.com/sanidhyy/zoom-clone",
+    title: "Ekta Janch Kendra",
+    des: "Diagnostic platform deployed via AWS S3 + CloudFront, improving load speed by ~40%.",
+    img: "/project2.png",
+    iconLists: ["/re.svg", "/tail.svg", "/js.svg", "/c.svg"],
+    link: "https://github.com/akash-mahawar",
+    sourceCode: "https://github.com/akash-mahawar",
+    caseStudy: {
+      problem: "The diagnostic portal had slow first-load performance for patients.",
+      role: "Built and deployed frontend on cloud static infrastructure.",
+      stack: ["React", "AWS S3", "CloudFront", "JavaScript"],
+      result: "Improved page load speed by about 40% and made updates easier to release.",
+    },
   },
   {
     id: 3,
-    title: "AI Image SaaS - Canva Application",
-    des: "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
-    img: "/p3.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-    link: "https://ai-imaginify.netlify.app",
-    sourceCode: "https://github.com/sanidhyy/imaginify",
+    title: "Narayan Energy Platform",
+    des: "Integrated AWS Lambda & SES APIs for serverless form handling with 99% email delivery success.",
+    img: "/project3.png",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/c.svg"],
+    link: "https://www.narayanenergy.in/",
+    sourceCode: "https://github.com/SinghAdii/Narayan-Energy-",
+    caseStudy: {
+      problem: "Lead capture and form response flow required manual follow-ups.",
+      role: "Integrated serverless APIs for contact and notification workflows.",
+      stack: ["Next.js", "AWS Lambda", "SES", "TypeScript"],
+      result: "Achieved reliable automated email workflows with high delivery success.",
+    },
   },
   {
     id: 4,
-    title: "Animated Apple Iphone 3D Website",
-    des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
+    title: "IPO Web Application",
+    des: "Co-led a team of 10 in developing an IPO web application with RESTful APIs, improving data retrieval speed by 40%.",
     img: "/p4.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    link: "https://app-iphone.netlify.app",
-    sourceCode: "https://github.com/sanidhyy/apple-clone",
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/c.svg"],
+    link: "https://github.com/akash-mahawar",
+    sourceCode: "https://github.com/akash-mahawar",
+    caseStudy: {
+      problem: "IPO data retrieval and UI responsiveness were bottlenecks for the team.",
+      role: "Co-led a 10-member engineering team and shipped API-powered features.",
+      stack: ["React", "TypeScript", "REST APIs"],
+      result: "Improved retrieval speed by 40% and delivered production-ready features faster.",
+    },
   },
 ] as const;
 
@@ -174,29 +198,29 @@ export const companies = [
 export const workExperience = [
   {
     id: 1,
-    title: "Frontend Engineer Intern",
-    desc: "Assisted in the development of a web-based platform using React.js, enhancing interactivity.",
+    title: "Software Development Engineer Intern",
+    desc: "Ziostech Solutions. Developed and deployed web applications using Next.js and Tailwind CSS, improving UI consistency.",
     className: "md:col-span-2",
     thumbnail: "/exp1.svg",
   },
   {
     id: 2,
-    title: "Mobile App Dev - JSM Tech",
-    desc: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
-    className: "md:col-span-2", // change to md:col-span-2
+    title: "Software Development Engineer Intern",
+    desc: "BlueStock FinTech. Co-led a team of 10 developing an IPO web application, improving data retrieval speed by 40%.",
+    className: "md:col-span-2",
     thumbnail: "/exp2.svg",
   },
   {
     id: 3,
-    title: "Freelance App Dev Project",
-    desc: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
-    className: "md:col-span-2", // change to md:col-span-2
+    title: "Cloud & Gen AI Certification",
+    desc: "Google Cloud Computing Foundation and Generative AI (40 Badges), mastering modern cloud architectures.",
+    className: "md:col-span-2",
     thumbnail: "/exp3.svg",
   },
   {
     id: 4,
-    title: "Lead Frontend Developer",
-    desc: "Developed and maintained user-facing features using modern frontend technologies.",
+    title: "Hackathon Top Performer",
+    desc: "Top 6 out of 154 teams in Be SDE Ready 1.0 Hackathon and 1st PRIZE in Campus Technical fest AADHAR.",
     className: "md:col-span-2",
     thumbnail: "/exp4.svg",
   },
@@ -204,23 +228,52 @@ export const workExperience = [
 
 export const socialMedia = [
   {
+    name: "Resume",
+    img: "/profile.svg",
+    link: "https://drive.google.com/file/d/1OnPc5DWWwFCZdKYL8LUoyE13emej59di/view?usp=sharing",
+  },
+  {
     name: "GitHub",
     img: "/git.svg",
-    link: "https://github.com/sanidhyy",
+    link: "https://github.com/AkashMahawar2002",
   },
   {
     name: "Twitter",
     img: "/twit.svg",
-    link: "https://x.com/_sanidhyy",
+    link: "https://x.com/akashmahawar001",
   },
   {
     name: "LinkedIn",
     img: "/link.svg",
-    link: "https://www.linkedin.com/in/sanidhyy",
+    link: "https://www.linkedin.com/in/akash-mahawar-09842b25a/",
   },
 ] as const;
 
 export const techStack = {
-  stack1: ["React.js", "Next.js", "Typescript"],
-  stack2: ["Vue.js", "AWS", "MongoDB"],
+  stack1: ["React.js", "Next.js", "Java"],
+  stack2: ["AWS", "MySQL", "C++"],
 } as const;
+
+export const codingProfiles = [
+  {
+    id: 1,
+    title: "LeetCode",
+    desc: "Solved various strict algorithmic and data structure problems.",
+    link: "https://leetcode.com/u/akashmahawar20/",
+    icon: "leetcode",
+  },
+  {
+    id: 2,
+    title: "GeeksforGeeks",
+    desc: "Consistent competitive programming and core concepts mastery.",
+    link: "https://www.geeksforgeeks.org/profile/akashmahawar19",
+    icon: "gfg",
+  },
+  {
+    id: 3,
+    title: "Codeforces",
+    desc: "Participated in global level competitive programming contests.",
+    link: "https://codeforces.com/profile/AkashMahawar20",
+    icon: "codeforces",
+  },
+] as const;

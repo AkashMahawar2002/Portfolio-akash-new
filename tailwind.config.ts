@@ -6,7 +6,7 @@ function toSrcset(svgString: string): string {
   const dataUri = "data:image/svg+xml," + encodeURIComponent(body);
   return dataUri.replace(/ /g, "%20");
 }
-import { default as flattenColorPalette } from "tailwindcss/lib/util/flattenColorPalette";
+import { default as flattenColorPalette } from "tailwindcss/lib/util/flattenColorPalette.js";
 import tailwindcssAnimate from "tailwindcss-animate";
 
 import "tailwindcss/colors";
